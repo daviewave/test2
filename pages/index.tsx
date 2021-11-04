@@ -42,15 +42,15 @@ import {
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
 
-function isWalletConnected() {
-  //THIS GETS THE THREE DROPDOWN BUTTON OPTIONS AND THE HANDLE FUNCTIONS ASSOCIATED WITH THEM
-  const { publicKey, wallet, disconnect } = useWallet();
-  //THIS TAKES THE BIG PUBLIC KEY FOR THE WALLET AND TURNS IT INTO A SIMPLE ADDRESS TO SEND TO
-  const base58 = useMemo(() => publicKey?.toBase58(), [publicKey]);
-  if (useWallet() !== null && base58 !== null) {
-    return true;
-  } else return false;
-}
+// function isWalletConnected() {
+//   //THIS GETS THE THREE DROPDOWN BUTTON OPTIONS AND THE HANDLE FUNCTIONS ASSOCIATED WITH THEM
+//   const { publicKey, wallet, disconnect } = useWallet();
+//   //THIS TAKES THE BIG PUBLIC KEY FOR THE WALLET AND TURNS IT INTO A SIMPLE ADDRESS TO SEND TO
+//   const base58 = useMemo(() => publicKey?.toBase58(), [publicKey]);
+//   if (useWallet() !== null && base58 !== null) {
+//     return true;
+//   } else return false;
+// }
 
 const Home: NextPage = () => {
   //TODO: NEED A FUNCTION TO CHECK IF THE WALLET IS CONNECTED
