@@ -3,6 +3,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from "../styles/Home.module.css";
 import { useWallet } from "@solana/wallet-adapter-react";
+//SOLANA DEPENDENCY IMPORT TO ALLOW PRE-MADE BUTTON CLASSES
+import {
+  WalletDisconnectButton,
+  WalletMultiButton,
+} from "@solana/wallet-adapter-react-ui";
 import React, {
   FC,
   useCallback,
@@ -11,20 +16,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-import {
-  ConnectionProvider,
-  WalletProvider,
-} from "@solana/wallet-adapter-react";
-import {
-  getLedgerWallet,
-  getPhantomWallet,
-  getSlopeWallet,
-  getSolflareWallet,
-  getSolletExtensionWallet,
-  getSolletWallet,
-  getTorusWallet,
-} from "@solana/wallet-adapter-wallets";
-import { clusterApiUrl } from "@solana/web3.js";
 
 // IMPORTS THE BOOTSTRAP COMPONENTS
 import Container from "react-bootstrap/Container";
@@ -36,25 +27,22 @@ import Carousel from "react-bootstrap/Carousel";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-//SOLANA DEPENDENCY IMPORT TO ALLOW PRE-MADE BUTTON CLASSES
-import {
-  WalletDisconnectButton,
-  WalletMultiButton,
-} from "@solana/wallet-adapter-react-ui";
 
-// function isWalletConnected() {
-//   //THIS GETS THE THREE DROPDOWN BUTTON OPTIONS AND THE HANDLE FUNCTIONS ASSOCIATED WITH THEM
-//   const { publicKey, wallet, disconnect } = useWallet();
-//   //THIS TAKES THE BIG PUBLIC KEY FOR THE WALLET AND TURNS IT INTO A SIMPLE ADDRESS TO SEND TO
-//   const base58 = useMemo(() => publicKey?.toBase58(), [publicKey]);
-//   if (useWallet() !== null && base58 !== null) {
-//     return true;
-//   } else return false;
-// }
+
+function isWalletConnected() {
+  //THIS GETS THE THREE DROPDOWN BUTTON OPTIONS AND THE HANDLE FUNCTIONS ASSOCIATED WITH THEM
+  const { publicKey, wallet, disconnect } = useWallet();
+  //THIS TAKES THE BIG PUBLIC KEY FOR THE WALLET AND TURNS IT INTO A SIMPLE ADDRESS TO SEND TO
+  const base58 = useMemo(() => publicKey?.toBase58(), [publicKey]);
+  if (useWallet() !== null && base58 !== null) {
+    return true;
+  } else return false;
+}
 
 const Home: NextPage = () => {
   //TODO: NEED A FUNCTION TO CHECK IF THE WALLET IS CONNECTED
-  // var isConnected = isWalletConnected();
+  var isConnected = isWalletConnected();
+  console.log(isConnected);
 
   //TODO: IF(CONNECTED) NEED A FUNCTION TO TO GET AND HASH THE KEY TO A DATA STRUCTURE
   // if (isConnected) {
