@@ -54,20 +54,20 @@ function isWalletConnected() {
 
 const Home: NextPage = () => {
   //TODO: NEED A FUNCTION TO CHECK IF THE WALLET IS CONNECTED
-  var isConnected = isWalletConnected();
+  // var isConnected = isWalletConnected();
 
   //TODO: IF(CONNECTED) NEED A FUNCTION TO TO GET AND HASH THE KEY TO A DATA STRUCTURE
-  if (isConnected) {
-    //TODO:
-    //1.HAVE A DATA-STRUCTURE SET UP THAT WILL BE ABLE TO STORE THE:
-    //(a)USERS-PUBLIC KEYS AND STORE WHERE ITS LOCATED USING AN
-    //(b)INDEX/HASH
-    //2. CREATE A HASH-NUMBER WITH A UNIQUE ID, CHECKING TO MAKE SURE THE SLOT IS EMPTY BEFORE INSERTING
-    //3. WILL NEED GETTER AND SETTER METHODS TO HERE TO MOVE THE COLLECTED PUBLIC KEY AND INDEX NUMBER TO THE DATA STRUCTURE
-  }
+  // if (isConnected) {
+  //TODO:
+  //1.HAVE A DATA-STRUCTURE SET UP THAT WILL BE ABLE TO STORE THE:
+  //(a)USERS-PUBLIC KEYS AND STORE WHERE ITS LOCATED USING AN
+  //(b)INDEX/HASH
+  //2. CREATE A HASH-NUMBER WITH A UNIQUE ID, CHECKING TO MAKE SURE THE SLOT IS EMPTY BEFORE INSERTING
+  //3. WILL NEED GETTER AND SETTER METHODS TO HERE TO MOVE THE COLLECTED PUBLIC KEY AND INDEX NUMBER TO THE DATA STRUCTURE
+  // }
 
-  const { publicKey, wallet, disconnect } = useWallet();
-  const base58 = useMemo(() => publicKey?.toBase58(), [publicKey]);
+  // const { publicKey, wallet, disconnect } = useWallet();
+  // const base58 = useMemo(() => publicKey?.toBase58(), [publicKey]);
 
   return (
     <div className={styles.container}>
