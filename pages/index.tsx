@@ -136,9 +136,7 @@ const Home: NextPage = () => {
                   />
                   <Carousel.Caption>
                     <h3>First slide label</h3>
-                    <p>
-                      Little description here
-                    </p>
+                    <p>Little description here</p>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -151,9 +149,7 @@ const Home: NextPage = () => {
                   />
                   <Carousel.Caption>
                     <h3>Second slide label</h3>
-                    <p>
-                      Little description here
-                    </p>
+                    <p>Little description here</p>
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
